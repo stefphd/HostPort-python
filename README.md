@@ -103,9 +103,9 @@ Compilation is performed using the *Makefile*
 make
 ```
 
-Before using the *Makefile*, change library and include so as to match your Python version (3.10 is used at the moment).
+Before using the *Makefile*, change library and include so as to match your Python version (3.10 is used at the moment). For Windows you can use [MSYS2](https://www.msys2.org/).
 
-Other make commands are:
+Other make commands are: mingw-w64-x86_64-boost
 
 * `make clean` to clean
 * `make remake` to clean and make
