@@ -157,7 +157,6 @@ public:
     static constexpr unsigned int HEADER = 0xFF812345; //!< Default header.
     static constexpr unsigned int TERMINATOR = 0xFF8CABDE; //!< Default terminator.
     static constexpr unsigned int TIMEOUT = 100; //!< Default timeout.
-    static constexpr unsigned int TX_BUF_SIZE = 1024; //!< Default timeout.
 
     /*! \brief Print details on the object.
         \details Print operator to show the details on the HostPort object.
@@ -211,6 +210,7 @@ private:
     bool _isInit; //!< True if begin (but maybe not isInit() returns false...).
     bool init(unsigned int port, unsigned int baud, unsigned int timeout); //!< Private initialization function
     static constexpr unsigned int MASK = 0xFF; //!< Mask for parsing.
+    static constexpr unsigned int TX_BUF_SIZE = 1024; //!< Size of the output buffer.
 };
 
 #endif
