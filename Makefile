@@ -11,9 +11,10 @@ SRCDIR      := ./src
 INCDIR      := ./include
 BUILDDIR    := ./.build
 
-# Python test script
+# Python
+PY			:= python3
+PYVER		:= 10
 TESTPY		:= testing.py
-PY			:= python
 
 # Compiler
 CC 			:= g++
@@ -21,8 +22,8 @@ CC 			:= g++
 # Flags, Libraries and Includes
 # edit these for different version of python and/or different path
 CFLAGS      := -fpic
-LIB			:= -lboost_python310
-INC         := -I$(INCDIR) -I/usr/include/python3.10/ -I/usr/include/boost/
+LIB			:= -lboost_python3$(PYVER)
+INC         := -I$(INCDIR) -I/usr/include/python3.$(PYVER)/ -I/usr/include/boost/
 
 # Extensions
 SRCEXT      := cpp
