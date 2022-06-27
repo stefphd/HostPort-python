@@ -13,7 +13,7 @@ BUILDDIR    := ./.build
 
 # Python
 PY			:= python3
-PYVER		:= 10
+PYVER		:= 9
 TESTPY		:= testing.py
 
 # Compiler
@@ -23,7 +23,7 @@ CC 			:= g++
 # edit these for different version of python and/or different path
 CFLAGS      := -fpic
 LIB			:= -lboost_python3$(PYVER)
-INC         := -I$(INCDIR) -I/usr/include/python3.$(PYVER)/ -I/usr/include/boost/
+INC         := -I$(INCDIR) -I/usr/include/ -I/usr/include/python3.$(PYVER)/
 
 # Extensions
 SRCEXT      := cpp
