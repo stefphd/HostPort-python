@@ -13,7 +13,7 @@ BUILDDIR    := ./.build
 
 # Python
 PY			:= python3
-PYVER		:= 9
+PYVER		:= 10
 TESTPY		:= testing.py
 
 # Compiler
