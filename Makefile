@@ -63,4 +63,4 @@ all: $(TARGET) test
 test:
 	@$(PY) $(TESTPY)
 
-.PHONY: $(TARGET) clean remake test 
+.PHONY: $(TARGET) clean remake test all
