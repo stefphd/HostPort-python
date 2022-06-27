@@ -5,6 +5,7 @@
 #include "Serial.h"
 #include <memory> 
 #include <iostream>
+#include <string>
 
 #include <boost/python.hpp>
 #include <boost/python/list.hpp>
@@ -199,18 +200,18 @@ public:
     bool writepy(boost::python::object obj);
 
 private:
+    //static constexpr unsigned int TX_BUF_SIZE = 1024; //!< Size of the output buffer.
+    static constexpr unsigned int MASK = 0xFF; //!< Mask for parsing.
     Serial serial; //!< Serial object.
     unsigned int _port = 0; //!< Serial port.
     unsigned int _baud = 0; //!< Baudrate.
     unsigned int _terminator = 0; //!< Terminator bytes.
     unsigned int _header = 0; //!< Header bytes.
     unsigned int _timeout = 0; //!< Timeout.
-    unsigned char _tx_buf[TX_BUF_SIZE]; //!< Tx buffer.
+    //unsigned char _tx_buf[TX_BUF_SIZE]; //!< Tx buffer.
     bool _isFirstRead = false; //!< True if firt packer read.
     bool _isInit; //!< True if begin (but maybe not isInit() returns false...).
     bool init(unsigned int port, unsigned int baud, unsigned int timeout); //!< Private initialization function
-    static constexpr unsigned int MASK = 0xFF; //!< Mask for parsing.
-    static constexpr unsigned int TX_BUF_SIZE = 1024; //!< Size of the output buffer.
 };
 
 #endif

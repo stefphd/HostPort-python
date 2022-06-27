@@ -113,11 +113,12 @@ bool HostPort::write(unsigned char* packetPtr, unsigned int size) {
         return false;
     }
 
-    if (size > TX_BUF_SIZE) {
+    /*if (size > TX_BUF_SIZE) {
         return false;
-    }
+    }*/
 
     size_t c = 0; //counter for sent size
+    unsigned char* _tx_buf = (unsigned char*) malloc(size+8);
 
     //put header
     _tx_buf[c++] = _header & MASK;
