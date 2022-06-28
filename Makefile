@@ -22,8 +22,8 @@ CC 			:= g++
 # Flags, Libraries and Includes
 # edit these for different version of python and/or different path
 CFLAGS      := -fpic
-LIB			:= -lboost_python3$(PYVER)
-INC         := -I$(INCDIR) -I/usr/include/ -I/usr/include/python3.$(PYVER)/
+LIB			:= -lboost_$(PY)$(PYVER) -l$(PY).$(PYVER)
+INC         := -I$(INCDIR) -I/usr/include -I/usr/include/$(PY).$(PYVER)
 
 # Extensions
 SRCEXT      := cpp
@@ -42,12 +42,12 @@ OBJECTS     := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.$(OBJE
 
 # Link objects files to shared lib
 $(TARGET): $(OBJECTS)
-	$(CC) -shared $(CFLAGS) $(LIB) -o $(TARGET).$(SOEXT) $^
+	$(CC) -shared $(CFLAGS) -o $(TARGET).$(SOEXT) $^ $(LIB)
 
 # Compile object files
 $(BUILDDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT)
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(INC) $(LIB) -c -o $@ $<
+	$(CC) $(CFLAGS) $(INC) -c -o $@ $< $(LIB)
 
 # Clean
 clean:
