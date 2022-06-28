@@ -65,6 +65,16 @@ To show all properties:
 print(h)
 ```
 
+To restart and flush the port
+
+```python
+# Restart
+h.restart()
+
+# Flush
+h.flush()
+```
+
 Finally, to close and clear
 
 ```python
@@ -72,7 +82,7 @@ Finally, to close and clear
 h.close()
 ```
 
-In addition, a number of set & get methods is provided:
+In addition, a number of set & get methods is provided (use `restart` after set to make the change effective):
 
 ```python
 # Set methods
@@ -80,6 +90,8 @@ h.setPort(3)
 h.setBaud(9600)
 h.setHeader(0xABDE1234)
 h.setTerminator(0x1234ABCD)
+h.setTerminator(200)
+h.restart() # Must use restart to make the change effective
 
 # Get methods
 print(h.getPort())
@@ -87,6 +99,7 @@ print(h.getBaud())
 print(h.isInit())
 print(hex(h.getHeader()))
 print(hex(h.getTerminator()))
+print(hex(h.getTimeout()))
 ```
 
 ## Building
