@@ -103,7 +103,7 @@ Compilation is performed using the *Makefile*
 make
 ```
 
-Before using the *Makefile*, change library and include so as to match your Python version (3.10 is used at the moment). 
+Before using the *Makefile*, change library and include so as to match your Python version (3.10 is used at the moment). For building in Windows you may use [Mingw-w64](https://www.mingw-w64.org/) with [MSYS2](https://www.msys2.org/) (requires *mingw-w64-x86_64-boost*).
 
 Other make commands are: 
 
