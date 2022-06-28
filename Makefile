@@ -43,7 +43,11 @@ endif
 # Extensions
 SRCEXT      := cpp
 OBJEXT      := o
+ifeq ($(UNAME_S), linux)
+SOEXT		:= so
+else
 SOEXT		:= pyd
+endif
 
 #---------------------------------------------------------------------------------
 #DO NOT EDIT BELOW THIS LINE
