@@ -3,6 +3,16 @@
 # Makefile for compilation of C/C++ library for python using boost #
 #------------------------------------------------------------------#
 
+# OS selection
+UNAME_S := $(shell uname -s)
+ifeq ($(findstring MINGW64_NT, $(UNAME_S)),MINGW64_NT)
+    UNAME_S := mingw64
+else ifeq ($(UNAME_S), Linux)
+	UNAME_S := linux
+else
+	$(error OS not Supported)
+endif
+
 # Target name
 TARGET  	:= hostport
 
@@ -22,13 +32,18 @@ CC 			:= g++
 # Flags, Libraries and Includes
 # edit these for different version of python and/or different path
 CFLAGS      := -fpic
+ifeq ($(UNAME_S), linux)
 LIB			:= -lboost_$(PY)$(PYVER) -l$(PY).$(PYVER)
 INC         := -I$(INCDIR) -I/usr/include -I/usr/include/$(PY).$(PYVER)
+else
+LIB			:= -lboost_$(PY)$(PYVER)-mt -l$(PY).$(PYVER)
+INC         := -I$(INCDIR) -I/usr/include -I/mingw64/include/$(PY).$(PYVER)
+endif
 
 # Extensions
 SRCEXT      := cpp
 OBJEXT      := o
-SOEXT       := so
+SOEXT		:= pyd
 
 #---------------------------------------------------------------------------------
 #DO NOT EDIT BELOW THIS LINE
