@@ -33,7 +33,7 @@ CC 			:= g++
 # edit these for different version of python and/or different path
 CFLAGS      := -fpic
 ifeq ($(UNAME_S), linux)
-LIB			:= -lboost_$(PY)$(PYVER) -l$(PY).$(PYVER)
+LIB			:= -L/lib/arm-linux-gnueabihf -lboost_$(PY)$(PYVER) -l$(PY).$(PYVER)
 INC         := -I$(INCDIR) -I/usr/include -I/usr/include/$(PY).$(PYVER)
 else
 LIB			:= -lboost_$(PY)$(PYVER)-mt -l$(PY).$(PYVER)
