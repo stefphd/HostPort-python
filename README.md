@@ -1,6 +1,6 @@
 # HostPort-python
 
- Python binding of the HostPort  class for communication from and to the microcontroller.
+Python binding of the HostPort  class for communication from and to the microcontroller.
 
 This is the (Python) host-side implementation of the Host Port class. The class is internally implemented in C++ and interfaced to Pythn using  [Boost.Python](https://github.com/boostorg/python) to generate a dynamic library importable in Python as a module. The Python module is thus just a wrapper around a C++ class.
 
