@@ -110,6 +110,12 @@ Pre-requisites for building are
 * *Boost.Python*
 * *Make*
 
+For example, on ArchLinux you can install via pacman using
+
+```shell
+pacman -S python3 boost make
+```
+
 Compilation is performed using the *Makefile*
 
 ```shell
