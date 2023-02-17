@@ -4,7 +4,7 @@ Python binding of the HostPort  class for communication from and to the microcon
 
 This is the (Python) host-side implementation of the Host Port class. The class is internally implemented in C++ and interfaced to Pythn using  [Boost.Python](https://github.com/boostorg/python) to generate a dynamic library importable in Python as a module. The Python module is thus just a wrapper around a C++ class.
 
-Tested on Windows 10 and Linux (ArchLinux) with Python 3.10.
+Tested on Windows 10, Linux (ArchLinux) and Rasberry (with ArchLinuxARM) with Python 3.10.
 
 ## Contens
 
@@ -17,7 +17,13 @@ Tested on Windows 10 and Linux (ArchLinux) with Python 3.10.
 
 ## Quick start
 
-Usage for the Host Port class is (requires `numpy`):
+The package is named `hostport` and requires having the `numpy` Python package installed (tested with 1.24.1 version). You may install `numpy` using `pip` with (may require root permission)
+
+```shell
+pip install -r requirements.txt
+```
+
+Usage for the Host Port class is the following.
 
 ```python
 # Import the python modules
