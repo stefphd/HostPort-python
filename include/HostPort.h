@@ -7,9 +7,13 @@
 #include <iostream>
 #include <string>
 
+#ifdef __USEBOOST__
+
 #include <boost/python.hpp>
 #include <boost/python/list.hpp>
 #include <boost/python/extract.hpp>
+
+#endif
 
 /*! \brief A class for host communication via serial port.
     \details Class for host communication via serial port with a specified communication protocol.
@@ -204,6 +208,8 @@ public:
         return os;
     }
 
+#ifdef __USEBOOST__
+
     /*! \brief Read data for Pythoin.
         \details Wrapper function to read data from Python binding.
         \param obj The Python object, created using numpy.empty(SIZE, dtype=numpy.DATATYPE)
@@ -217,6 +223,8 @@ public:
         \return true if success, false otherwise.
     */
     bool writepy(boost::python::object obj);
+
+#endif
 
 private:
     //static constexpr unsigned int TX_BUF_SIZE = 1024; //!< Size of the output buffer.

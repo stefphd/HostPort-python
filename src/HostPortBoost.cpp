@@ -5,6 +5,9 @@
 #include "HostPort.h"
 #include "Serial.h"
 
+
+#ifdef __USEBOOST__
+
 #include <boost/python.hpp>
 #include <boost/python/list.hpp>
 #include <boost/python/extract.hpp>
@@ -49,3 +52,5 @@ BOOST_PYTHON_MODULE(hostport)
         ;
     ;
 };
+
+#endif

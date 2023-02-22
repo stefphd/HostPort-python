@@ -31,7 +31,7 @@ CC 			:= g++
 
 # Flags, Libraries and Includes
 # edit these for different version of python and/or different path
-CFLAGS      := -fpic
+CFLAGS      := -fpic -D__USEBOOST__
 ifeq ($(UNAME_S), linux)
 LIB			:= -lboost_$(PY)$(PYVER) -l$(PY).$(PYVER)
 INC         := -I$(INCDIR) -I/usr/include -I/usr/include/$(PY).$(PYVER)
