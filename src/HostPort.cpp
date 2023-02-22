@@ -214,9 +214,6 @@ bool HostPort::init(unsigned int port, unsigned int baud, unsigned int timeout) 
     return serial.begin(port, baud, timeout);
 }
 
-
-#ifdef __USEBOOST__
-
 //readpy
 bool HostPort::readpy (boost::python::object obj) {
     PyObject* pobj = obj.ptr();
@@ -240,5 +237,3 @@ bool HostPort::writepy (boost::python::object obj) {
     }
     return false;
 }
-
-#endif
