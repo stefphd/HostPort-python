@@ -19,6 +19,10 @@ bool (HostPort::*begin2args)(unsigned int, unsigned int) = &HostPort::begin;
 bool (HostPort::*begin4args)(unsigned int, unsigned int, unsigned int, unsigned int) = &HostPort::begin;
 bool (HostPort::*begin5args)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int) = &HostPort::begin;
 
+//declare static
+const unsigned int HostPort::HEADER;
+const unsigned int HostPort::TERMINATOR;
+const unsigned int HostPort::TIMEOUT;
 
 // python module
 BOOST_PYTHON_MODULE(hostport)
